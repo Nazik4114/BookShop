@@ -29,7 +29,7 @@ height:860;
         <div class="col"  th:each="book : ${books}">
           <div class="card shadow-sm ">
 			<img alt="" th:src="${book.url_image}" height="560">
-            <div class="card-body">
+            <div class="card-body" style="height: 190px;">
               <h3 class="card-text" th:text="${book.name}"></h3>
               <p class="card-text" th:text="'Price: '+${book.price}+'  $'"></p>
               <div class="d-flex justify-content-between align-items-center">
