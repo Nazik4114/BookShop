@@ -155,7 +155,7 @@ public class AdminController {
 		return "editBook";
 	}
 	@PostMapping("/admin/editBook/{id}")
-	public String editBookPost(@PathVariable(value="id") Long id,Model model,String[] authorId, String[] publisherId,@RequestParam String name,@RequestParam String quantyti,@RequestParam String title,@RequestParam String url_image) {
+	public String editBookPost(@PathVariable(value="id") Long id,Model model,String[] authorId, String[] publisherId,@RequestParam String name,@RequestParam String quantyti,@RequestParam String title,@RequestParam String url_image,@RequestParam String price) {
 		List<Author> bookAuthors=new ArrayList<>(authorId.length);
 		for (String id1 : authorId) {
 			Optional<Author> authors=authorRepository.findById(Long.valueOf(id1));
@@ -171,6 +171,7 @@ public class AdminController {
 		books.setName(name);
 		books.setQuantyti(Integer.valueOf(quantyti));
 		books.setTitle(title);
+		books.setPrice(Long.valueOf(price));
 		books.setUrl_image(url_image);
 		books.setAuthors(bookAuthors);
 		books.setPublishers(publisherAuthors);

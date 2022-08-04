@@ -23,6 +23,9 @@ public class Book {
   
   private String url_image;
   
+  private long price;
+
+  
   @ManyToMany
 	private List<Author> authors;
   
@@ -32,6 +35,14 @@ public class Book {
   private Integer quantyti;
   
   
+
+public long getPrice() {
+	return price;
+}
+
+public void setPrice(long price) {
+	this.price = price;
+}
 
 public List<Author> getAuthors() {
 	return authors;
