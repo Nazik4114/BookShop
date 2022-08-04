@@ -13,7 +13,7 @@ img{
 height:560 px;
 }
 .page{
-margin-left:45%;
+margin-left:50%;
 }
 .d{
 height:860;
@@ -44,7 +44,7 @@ height:860;
         
         
         </div>
-      </div>   
+      </div><br>
       <nav aria-label="Page navigation example">
       <ul class="pagination page" >
       <li class="page-item" th:each= "page : ${#numbers.sequence(0, books_p.totalPages - 1)}"> <a class="page-link" th:href="@{|/home?page=${page}&size=6|}" th:text="${page + 1}"></a></li>
