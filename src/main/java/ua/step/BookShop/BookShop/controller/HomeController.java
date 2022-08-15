@@ -30,6 +30,13 @@ public class HomeController {
 	@Autowired
 	private PublisherRepository publisherRepository;
 	
+	@GetMapping("/")
+	public String Start(Model model, Pageable pageable) {
+		model.addAttribute("books", bookRepository.findAll(pageable));
+		model.addAttribute("books_p", bookRepository.findAll(pageable));	
+		return "redirect:home?page=0&size=6";
+	}
+	
 	@GetMapping("/home")
 	public String ShowAllBook(Model model, Pageable pageable) {
 		model.addAttribute("books", bookRepository.findAll(pageable));

@@ -25,10 +25,10 @@
 <input type="text" th:value="${item.quantyti}" name="quantyti" placeholder="Enter quantity book" class="form-control"><br>
 <textarea th:text="${item.title}" name="title" placeholder="Enter book title" class="form-control"></textarea><br>
 <select multiple id="authorId" name="authorId" class="form-control">
-<option th:each="author:${authors}" th:value="${author.id}" th:text="${author.fio}" selected></option>
+<option th:each="author:${authors}" th:value="${author.id}" th:text="${author.fio}" th:selected="${item.authors.contains(author)}"></option>
 </select><br>
 <select multiple id="publisherId" name="publisherId" class="form-control">
-<option th:each="publisher:${publishers}" th:value="${publisher.id}" th:text="${publisher.name}" selected></option>
+<option th:each="publisher:${publishers}" th:value="${publisher.id}" th:text="${publisher.name}" th:selected="${item.publishers.contains(publisher)}"></option>
 </select><br>
 
 <input type="submit" name="OK" value="SUBMIT" class="btn btn-success">

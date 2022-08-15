@@ -100,10 +100,11 @@ public void setUrl_image(String url_image) {
 	this.url_image = url_image;
 }
 
-public Book(Long id, String name, String title, String url_image,Integer quantyti) {
+public Book(Long id, String name, String title, String url_image,Integer quantyti, long price) {
 	this.id = id;
 	this.name = name;
 	this.title = title;
+	this.price=price;
 	this.url_image = url_image;
 	this.quantyti=quantyti;
 }
